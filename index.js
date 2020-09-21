@@ -91,4 +91,4 @@ class SWAPI {
     }
 }
 exports.default = SWAPI;
-SWAPI.baseURL = "https://swapi.co/api/";
+SWAPI.baseURL = "https://swapi.dev/api/";

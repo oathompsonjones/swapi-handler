@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default class SWAPI {
-    private static baseURL: string = "https://swapi.co/api/";
+    private static baseURL: string = "https://swapi.dev/api/";
 
     public static async getPerson(search: string): Promise<ISWPerson | undefined> {
         let person: ISWPerson | undefined;
