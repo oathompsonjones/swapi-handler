@@ -1,6 +1,6 @@
 {
     "name": "swapi-handler",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Star Wars API handler for node.js",
     "main": "index.js",
     "scripts": {
@@ -9,6 +9,6 @@
     "author": "oathompsonjones",
     "license": "ISC",
     "dependencies": {
-        "axios": "^0.19.2"
+        "axios": "^0.21.1"
     }
 }
