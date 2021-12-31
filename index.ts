@@ -3,7 +3,7 @@ import axios from "axios";
 export default class SWAPI {
     private static baseURL: string = "https://swapi.dev/api/";
 
-    public static async getPeople(): Promise<ISWPerson[]> {
+    public static async getAllPeople(): Promise<ISWPerson[]> {
         return (await axios.get(`${this.baseURL}people`)).data.results;
     }
 

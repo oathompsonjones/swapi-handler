@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class SWAPI {
-    static async getPeople() {
+    static async getAllPeople() {
         return (await axios_1.default.get(`${this.baseURL}people`)).data.results;
     }
     static async getAllFilms() {
