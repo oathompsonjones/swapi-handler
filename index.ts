@@ -3,11 +3,8 @@ import axios from "axios";
 export default class SWAPI {
     private static baseURL: string = "https://swapi.dev/api/";
 
-    public static async getPerson(search: string): Promise<ISWPerson | undefined> {
-        let person: ISWPerson | undefined;
-        if (search.startsWith(this.baseURL)) person = (await axios.get(search)).data;
-        else person = (await axios.get(`${this.baseURL}people/?search=${search}`)).data.results[0];
-        return person;
+    public static async getPeople(): Promise<ISWPerson[]> {
+        return (await axios.get(`${this.baseURL}people`)).data.results;
     }
 
     public static async getAllFilms(): Promise<ISWFilm[]> {
@@ -28,6 +25,13 @@ export default class SWAPI {
 
     public static async getAllPlanets(): Promise<ISWPlanet[]> {
         return (await axios.get(`${this.baseURL}planets`)).data.results;
+    }
+
+    public static async getPerson(search: string): Promise<ISWPerson | undefined> {
+        let person: ISWPerson | undefined;
+        if (search.startsWith(this.baseURL)) person = (await axios.get(search)).data;
+        else person = (await axios.get(`${this.baseURL}people/?search=${search}`)).data.results[0];
+        return person;
     }
 
     public static async getFilm(search: string): Promise<ISWFilm | undefined> {

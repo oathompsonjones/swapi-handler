@@ -5,13 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class SWAPI {
-    static async getPerson(search) {
-        let person;
-        if (search.startsWith(this.baseURL))
-            person = (await axios_1.default.get(search)).data;
-        else
-            person = (await axios_1.default.get(`${this.baseURL}people/?search=${search}`)).data.results[0];
-        return person;
+    static async getPeople() {
+        return (await axios_1.default.get(`${this.baseURL}people`)).data.results;
     }
     static async getAllFilms() {
         return (await axios_1.default.get(`${this.baseURL}films`)).data.results;
@@ -27,6 +22,14 @@ class SWAPI {
     }
     static async getAllPlanets() {
         return (await axios_1.default.get(`${this.baseURL}planets`)).data.results;
+    }
+    static async getPerson(search) {
+        let person;
+        if (search.startsWith(this.baseURL))
+            person = (await axios_1.default.get(search)).data;
+        else
+            person = (await axios_1.default.get(`${this.baseURL}people/?search=${search}`)).data.results[0];
+        return person;
     }
     static async getFilm(search) {
         let film;
