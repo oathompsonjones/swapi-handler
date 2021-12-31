@@ -13,6 +13,21 @@ class SWAPI {
             person = (await axios_1.default.get(`${this.baseURL}people/?search=${search}`)).data.results[0];
         return person;
     }
+    static async getAllFilms() {
+        return (await axios_1.default.get(`${this.baseURL}films`)).data.results;
+    }
+    static async getAllStarships() {
+        return (await axios_1.default.get(`${this.baseURL}starships`)).data.results;
+    }
+    static async getAllVehicles() {
+        return (await axios_1.default.get(`${this.baseURL}vehicles`)).data.results;
+    }
+    static async getAllSpecies() {
+        return (await axios_1.default.get(`${this.baseURL}species`)).data.results;
+    }
+    static async getAllPlanets() {
+        return (await axios_1.default.get(`${this.baseURL}planets`)).data.results;
+    }
     static async getFilm(search) {
         let film;
         if (search.startsWith(this.baseURL))

@@ -10,6 +10,26 @@ export default class SWAPI {
         return person;
     }
 
+    public static async getAllFilms(): Promise<ISWFilm[]> {
+        return (await axios.get(`${this.baseURL}films`)).data.results;
+    }
+
+    public static async getAllStarships(): Promise<ISWStarship[]> {
+        return (await axios.get(`${this.baseURL}starships`)).data.results;
+    }
+
+    public static async getAllVehicles(): Promise<ISWVehicle[]> {
+        return (await axios.get(`${this.baseURL}vehicles`)).data.results;
+    }
+
+    public static async getAllSpecies(): Promise<ISWSpecies[]> {
+        return (await axios.get(`${this.baseURL}species`)).data.results;
+    }
+
+    public static async getAllPlanets(): Promise<ISWPlanet[]> {
+        return (await axios.get(`${this.baseURL}planets`)).data.results;
+    }
+
     public static async getFilm(search: string): Promise<ISWFilm | undefined> {
         let film: ISWFilm | undefined;
         if (search.startsWith(this.baseURL)) film = (await axios.get(search)).data;
